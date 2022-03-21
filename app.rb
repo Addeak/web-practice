@@ -18,5 +18,7 @@ get '/morethings' do
 end
 
 get '/cat' do
-  send_file 'cat_photo.html'
+  array = ["Amigo", "Misty", "Almond"] 
+  @name = array[rand(3)]
+ erb(:index)
 end
