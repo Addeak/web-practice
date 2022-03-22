@@ -17,8 +17,18 @@ get '/morethings' do
   "And these other things!"
 end
 
-get '/cat' do
+get '/random-cat' do
   array = ["Amigo", "Misty", "Almond"] 
   @name = array[rand(3)]
  erb(:index)
+end
+
+post '/named-cat' do
+  p params
+  @name = params[:name]
+  erb(:index)
+end
+
+get '/give-name' do
+  erb(:give_name)
 end
